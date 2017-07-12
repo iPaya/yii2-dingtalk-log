@@ -1,0 +1,37 @@
+{
+    "name": "ipaya/yii2-dingtalk-log",
+    "description": "基于 Yii2 的钉钉日志报警",
+    "keywords": [
+        "yii2",
+        "framework",
+        "iPaya",
+        "钉钉",
+        "日志报警"
+    ],
+    "type": "yii2-extension",
+    "minimum-stability": "stable",
+    "license": "BSD-3-Clause",
+    "require": {
+        "php": "^7.0",
+        "yiisoft/yii2": "~2.0.11",
+        "ipaya/yii2-dingtalk-robot": "*"
+    },
+    "require-dev": {
+        "yiisoft/yii2-gii": "*",
+        "yiisoft/yii2-debug": "*"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "iPaya\\DingTalk\\Log\\": "src"
+        }
+    }
+}
