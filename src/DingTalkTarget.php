@@ -21,7 +21,6 @@ class DingTalkTarget extends Target
 
     public function init()
     {
-
         if (is_string($this->robot)) {
             $this->robot = Yii::$app->get($this->robot);
         } elseif (is_array($this->robot)) {
@@ -42,10 +41,9 @@ class DingTalkTarget extends Target
      */
     public function export()
     {
-        $messages = array_map([$this, 'formatMessage'], $this->messages);
-        $body = wordwrap(implode("\n", $messages), 70);
-        $markdown = "```\n{$body}\n```";
+        $text = implode("\n", array_map([$this, 'formatMessage'], $this->messages)) . "\n";
+        $markdown = "```\n{$text}\n```";
+        $markdown = mb_convert_encoding($markdown, Yii::$app->charset);
         $this->robot->sendMarkdown($this->title, $markdown);
     }
-
 }
