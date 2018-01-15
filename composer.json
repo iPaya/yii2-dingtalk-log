@@ -13,25 +13,16 @@
     "license": "BSD-3-Clause",
     "require": {
         "php": "^7.0",
-        "yiisoft/yii2": "~2.0.11",
-        "ipaya/yii2-dingtalk-robot": "*"
+        "yiisoft/yii2": "*",
+        "ipaya/dingtalk": "*"
     },
     "require-dev": {
         "yiisoft/yii2-gii": "*",
         "yiisoft/yii2-debug": "*"
     },
-    "config": {
-        "process-timeout": 1800,
-        "fxp-asset": {
-            "installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
-            }
-        }
-    },
     "autoload": {
         "psr-4": {
-            "iPaya\\DingTalk\\Log\\": "src"
+            "iPaya\\Yii2\\DingTalk\\Log\\": ""
         }
     }
 }
